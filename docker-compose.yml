@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  repository:
+    build: .
+    container_name: repository-gitclone
+    environment:
+      - ID_RSA=${ID_RSA}
+    command: ["sh","create-id-rsa.sh"]
+    volumes:
+      - ./api:/src
